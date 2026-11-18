@@ -114,6 +114,10 @@
       background-image: repeating-linear-gradient(90deg, #FAE3DF 0 110px, #F5CAC3 110px 220px);
     }
     .certs {
+      background-color: #C9D6E6;
+      background-image: repeating-linear-gradient(90deg, #C9D6E6 0 110px, #5C7FA3 110px 220px);
+    }
+    .projects {
       background-color: #C2D4CF;
       background-image: repeating-linear-gradient(90deg, #C2D4CF 0 110px, #84A59D 110px 220px);
     }
@@ -181,6 +185,9 @@
     .certs .inner {
       max-width: 860px;
     }
+    .certs h2 {
+      color: #ffffff;
+    }
     .list {
       display: flex;
       flex-direction: column;
@@ -231,6 +238,42 @@
     }
     .cert a:hover {
       border-bottom-color: #84A59D;
+    }
+
+    /* ---------- Projects ---------- */
+    .projects .inner {
+      max-width: 860px;
+    }
+    .project {
+      padding: 40px 44px;
+      text-align: left;
+      background-color: #ffffff;
+      border-left: 8px solid #F6BD60;
+      border-radius: 14px;
+    }
+    .project h3 {
+      margin: 0;
+      font-size: 1.6rem;
+      line-height: 1.25;
+      font-weight: 700;
+      color: #2b2b2b;
+    }
+    .project .meta {
+      max-width: none;
+      margin: 10px 0 0;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #5a5a5a;
+    }
+    .project ul {
+      margin: 22px 0 0;
+      padding-left: 22px;
+    }
+    .project li {
+      margin-top: 10px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #2b2b2b;
     }
 
     /* ---------- Contact ---------- */
@@ -295,8 +338,11 @@
         --header: 72px;
       }
       header {
-        gap: 16px;
+        gap: 12px;
         padding: 0 24px;
+      }
+      header a {
+        font-size: 0.85rem;
       }
       section {
         padding: 72px 24px calc(72px + var(--wave));
@@ -320,6 +366,12 @@
       .cert h3 {
         font-size: 1.35rem;
       }
+      .project {
+        padding: 28px 26px;
+      }
+      .project h3 {
+        font-size: 1.35rem;
+      }
     }
   </style>
 </head>
@@ -327,6 +379,7 @@
   <header>
     <a href="#about">About</a>
     <a href="#certifications">Certifications</a>
+    <a href="#projects">Projects</a>
     <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
     <a href="#contact">Contact</a>
   </header>
@@ -385,9 +438,35 @@
     </div>
   </section>
 
+  <section class="projects wavy wave-a" id="projects">
+    <div class="inner">
+      <h2>Projects</h2>
+      <div class="list">
+        <div class="project">
+          <h3>Planet Fitness Digital App</h3>
+          <p class="meta">Product Management Final Project · Team Lead · March – June 2026</p>
+          <ul>
+            <li>Defined technical requirements and architecture for a new AI-powered gamified feature (streaks, XP) on the existing app to improve member retention and engagement.</li>
+            <li>Created a 4-feature roadmap using an impact-effort framework, projected to double daily active users within 6 months.</li>
+            <li>Led 3 rounds of usability testing (9 sessions), identifying 3 fixes including a privacy redesign for peer matching, reaching 9/9 task completion and de-risking a $61.8M revenue roadmap.</li>
+          </ul>
+        </div>
+        <div class="project">
+          <h3>Rady Action Project with Qualcomm Technologies</h3>
+          <p class="meta">Team Editor · March – June 2026</p>
+          <ul>
+            <li>Delivered a market analysis evaluating on-device AI silicon strategy against cloud-based LLM alternatives, working with a 6-member cross-functional team.</li>
+            <li>Translated AI PC hardware benchmarking (30 tokens/s interactive threshold across 4 model sizes vs. 3 competitor chipsets) into the technical case for the recommended NPU architecture.</li>
+            <li>Synthesized technical, financial and market findings into a pricing and business model recommendation for Qualcomm’s SVP &amp; GM of Compute and Gaming, presented to client stakeholders and Rady faculty.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="contact wavy wave-a" id="contact">
     <div class="inner">
-      <h2>Say Hello!</h2>
+      <h2>Let’s Connect</h2>
       <!-- Replace YOUR_FORM_ID with the ID from your free Formspree form (formspree.io) -->
       <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <label>
