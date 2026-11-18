@@ -111,19 +111,23 @@
     /* Straight, thick, parallel vertical lines: original color + a lighter shade */
     .about {
       background-color: #FAE3DF;
-      background-image: repeating-linear-gradient(90deg, #FAE3DF 0 110px, #F5CAC3 110px 220px);
+      background-image: repeating-linear-gradient(90deg, #FAE3DF 0 190px, #F5CAC3 190px 380px);
+    }
+    .experience {
+      background-color: #F5CAC3;
+      background-image: repeating-linear-gradient(90deg, #F5CAC3 0 190px, #FAE3DF 190px 380px);
     }
     .certs {
       background-color: #C9D6E6;
-      background-image: repeating-linear-gradient(90deg, #C9D6E6 0 110px, #5C7FA3 110px 220px);
+      background-image: repeating-linear-gradient(90deg, #C9D6E6 0 190px, #5C7FA3 190px 380px);
     }
     .projects {
       background-color: #C2D4CF;
-      background-image: repeating-linear-gradient(90deg, #C2D4CF 0 110px, #84A59D 110px 220px);
+      background-image: repeating-linear-gradient(90deg, #C2D4CF 0 190px, #84A59D 190px 380px);
     }
     .contact {
       background-color: #FBDFAE;
-      background-image: repeating-linear-gradient(90deg, #FBDFAE 0 110px, #F6BD60 110px 220px);
+      background-image: repeating-linear-gradient(90deg, #FBDFAE 0 190px, #F6BD60 190px 380px);
       padding-bottom: 120px;
     }
 
@@ -186,7 +190,7 @@
       max-width: 860px;
     }
     .certs h2 {
-      color: #ffffff;
+      color: #2b2b2b;
     }
     .list {
       display: flex;
@@ -200,9 +204,12 @@
       gap: 36px;
       padding: 40px 44px;
       text-align: left;
-      background-color: #ffffff;
-      border-left: 8px solid #F6BD60;
-      border-radius: 14px;
+      background-color: rgba(255, 255, 255, 0.22);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      border: 1.5px solid rgba(255, 255, 255, 0.55);
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(43, 43, 43, 0.08);
     }
     .cert img {
       flex-shrink: 0;
@@ -224,7 +231,7 @@
     .cert .meta {
       margin: 10px 0 0;
       font-size: 1.1rem;
-      color: #5a5a5a;
+      color: #2b2b2b;
     }
     .cert a {
       display: inline-block;
@@ -274,6 +281,131 @@
       font-size: 1.05rem;
       line-height: 1.6;
       color: #2b2b2b;
+    }
+
+    /* ---------- Experience & Education timeline ---------- */
+    .experience .inner {
+      max-width: 860px;
+    }
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 24px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #2b2b2b;
+    }
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .legend i {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .timeline {
+      position: relative;
+      margin-top: 56px;
+      text-align: left;
+      --accent: #6f8f87;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 14px;
+      bottom: 14px;
+      width: 4px;
+      border-radius: 2px;
+      background-color: #D9697A;
+    }
+    .tl-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      column-gap: 24px;
+      grid-template-areas: "pin date" "pin card";
+      margin-bottom: 32px;
+    }
+    .tl-item:last-child {
+      margin-bottom: 0;
+    }
+    .tl-item.exp {
+      --accent: #5C7FA3;
+    }
+    .tl-item.edu {
+      --accent: #6f8f87;
+    }
+    .tl-pin {
+      grid-area: pin;
+      position: relative;
+      z-index: 1;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      border: 5px solid #D9697A;
+    }
+    .tl-date {
+      grid-area: date;
+      margin: 0;
+      max-width: none;
+      padding: 2px 0 12px;
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #2b2b2b;
+    }
+    .tl-date strong {
+      font-weight: 700;
+    }
+    .tl-card {
+      grid-area: card;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 18px 30px;
+      background-color: rgba(255, 255, 255, 0.22);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(43, 43, 43, 0.08);
+    }
+    .tl-logo {
+      flex-shrink: 0;
+      width: 104px;
+      height: 104px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+    .tl-logo.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #4a4a4a;
+      border: 2px dashed rgba(43, 43, 43, 0.25);
+      background-color: rgba(255, 255, 255, 0.55);
+    }
+    .tl-card h3 {
+      margin: 0;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      font-weight: 700;
+      color: #2b2b2b;
+    }
+    .tl-card .meta {
+      max-width: none;
+      margin: 6px 0 0;
+      font-size: 1rem;
+      line-height: 1.45;
+      color: #3d3d3d;
     }
 
     /* ---------- Contact ---------- */
@@ -335,10 +467,13 @@
     @media (max-width: 600px) {
       :root {
         --wave: 50px;
-        --header: 72px;
+        --header: 96px;
       }
       header {
-        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        gap: 6px 16px;
         padding: 0 24px;
       }
       header a {
@@ -372,12 +507,31 @@
       .project h3 {
         font-size: 1.35rem;
       }
+      .tl-item {
+        column-gap: 16px;
+        margin-bottom: 24px;
+      }
+      .timeline::before {
+        left: 12px;
+      }
+      .tl-card {
+        gap: 16px;
+        padding: 16px 20px;
+      }
+      .tl-logo {
+        width: 76px;
+        height: 76px;
+      }
+      .tl-card h3 {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <a href="#about">About</a>
+    <a href="#experience">Experience</a>
     <a href="#certifications">Certifications</a>
     <a href="#projects">Projects</a>
     <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -403,6 +557,68 @@
       <p>MBA (Class of 2027), Rady School of Management, UC San Diego.<br>B.S. in Computer Engineering, University of Illinois Urbana-Champaign.</p>
 
       <a class="resume-btn" href="resume.pdf" target="_blank" rel="noopener">View my resume</a>
+    </div>
+  </section>
+
+  <section class="experience wavy wave-a" id="experience">
+    <div class="inner">
+      <h2>Experience &amp; Education</h2>
+      <div class="legend">
+        <span><i style="background:#5C7FA3"></i>Career</span>
+        <span><i style="background:#6f8f87"></i>Education</span>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item edu">
+          <p class="tl-date">Expected June <strong>2027</strong></p>
+          <div class="tl-pin"></div>
+          <div class="tl-card">
+            <img class="tl-logo" src="images/ucsd.png" alt="UC San Diego logo">
+            <div class="tl-text">
+              <h3>Master of Business Administration (MBA)</h3>
+              <p class="meta">Rady School of Management, University of California San Diego</p>
+              <p class="meta">GPA 3.93/4.0</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item exp">
+          <p class="tl-date">April <strong>2026</strong> – December <strong>2026</strong></p>
+          <div class="tl-pin"></div>
+          <div class="tl-card">
+            <img class="tl-logo" src="images/pmi.png" alt="Project Management Institute logo">
+            <div class="tl-text">
+              <h3>Virtual Events Program Manager</h3>
+              <p class="meta">Project Management Institute, San Diego Chapter</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item exp">
+          <p class="tl-date">July <strong>2021</strong> – March <strong>2025</strong></p>
+          <div class="tl-pin"></div>
+          <div class="tl-card">
+            <img class="tl-logo" src="images/qualcomm.png" alt="Qualcomm logo">
+            <div class="tl-text">
+              <h3>5G RF Software Engineer</h3>
+              <p class="meta">Qualcomm Technologies Inc.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item edu">
+          <p class="tl-date">May <strong>2021</strong></p>
+          <div class="tl-pin"></div>
+          <div class="tl-card">
+            <img class="tl-logo" src="images/uiuc.png" alt="University of Illinois Urbana-Champaign logo">
+            <div class="tl-text">
+              <h3>B.S. in Computer Engineering</h3>
+              <p class="meta">University of Illinois Urbana-Champaign</p>
+              <p class="meta">GPA 3.90/4.0</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
