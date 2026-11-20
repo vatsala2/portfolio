@@ -8,6 +8,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    /* ---------- Custom font for the name ---------- */
+    @font-face {
+      font-family: "Whispering Signature";
+      src: url("fonts/WhisperingSignature.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       --wave: 80px;
       --header: 88px;
@@ -137,6 +146,14 @@
       font-weight: 700;
       font-size: clamp(2.75rem, 9vw, 6.5rem);
       letter-spacing: -0.02em;
+    }
+    /* Your name, in the signature font */
+    .home h1 {
+      font-family: "Whispering Signature", cursive;
+      font-weight: 400;
+      letter-spacing: 0;
+      font-size: clamp(2.75rem, 11vw, 5.5rem);
+      line-height: 1.2;
     }
     h2 {
       margin: 0;
